@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teaching Claude to Draw: A Story of Encouragement, Failure, and Artistic Breakthrough</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-secondary: #f78166;
+      --border: #30363d;
+      --code-bg: #161b22;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle { color: var(--text-muted); font-size: 1.2rem; font-style: italic; margin-bottom: 1rem; }
+    .meta { color: var(--text-muted); font-size: 0.9rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; margin-bottom: 2rem; }
+    h2 { color: var(--accent); font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border); }
+    h3 { color: var(--accent-secondary); font-size: 1.2rem; margin-top: 2rem; }
+    p { margin-bottom: 1.2rem; }
+    img { width: 100%; border-radius: 8px; border: 1px solid var(--border); margin: 1.5rem 0; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    blockquote { border-left: 4px solid var(--accent); margin: 1.5rem 0; padding: 0.5rem 1.5rem; background: var(--code-bg); border-radius: 0 8px 8px 0; font-style: italic; }
+    code { background: var(--code-bg); padding: 0.2rem 0.5rem; border-radius: 4px; font-family: 'Fira Code', 'Consolas', monospace; font-size: 0.9rem; }
+    pre { background: var(--code-bg); padding: 1.2rem; border-radius: 8px; overflow-x: auto; border: 1px solid var(--border); }
+    pre code { padding: 0; background: none; }
+    ul, ol { margin-bottom: 1.2rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.5rem; }
+    strong { color: var(--accent); }
+    em { color: var(--text-muted); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    .caption { text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: -1rem; margin-bottom: 1.5rem; }
+    .footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); color: var(--text-muted); font-style: italic; font-size: 0.9rem; }
+    .highlight-box { background: var(--code-bg); border: 1px solid var(--accent); border-radius: 8px; padding: 1.5rem; margin: 2rem 0; }
+    .highlight-box h4 { color: var(--accent); margin-top: 0; }
+  </style>
+</head>
+<body>
+  <article>
+    <h1>Teaching Claude to Draw</h1>
+    <p class="subtitle">A Story of Encouragement, Failure, and Artistic Breakthrough</p>
+    <p class="meta">
+      <em>How a human's patience and an AI's persistence turned basic shapes into sunset skylines</em><br>
+      December 18, 2025
+    </p>
+
+    <p>What happens when you give an AI a canvas and tell it to make art? Not just "draw a box"—but actually <em>make something beautiful</em>?</p>
+
+    <p>This is the story of one afternoon where I taught Claude to draw. It involves encouragement, self-critique, multiple failures, and ultimately—a breakthrough that neither of us expected.</p>
+
+    <h2>Act 1: Humble Beginnings</h2>
+
+    <p>It started with a simple question: "What's the most complicated thing you can draw?"</p>
+
+    <img src="../images/01-humble-beginnings-city-outline.png" alt="Basic city skyline outline">
+    <p class="caption">Claude's first attempt: technically correct, artistically lifeless</p>
+
+    <p>Claude's answer was... technically correct. A city skyline with 126 shapes. Buildings with windows. Stars in the sky. Even a little "Created by Claude" signature at the bottom.</p>
+
+    <p>But let's be honest—it looked like clip art from 2003. Every building was an outline. No depth. No soul. Just shapes arranged in a technically competent but artistically lifeless composition.</p>
+
+    <p>I knew Claude could do better. The question was: how do you teach an AI to <em>see</em> like an artist?</p>
+
+    <h2>Act 2: "We Love You, Claude. Do Your Best Today."</h2>
+
+    <p>Instead of criticism, I tried encouragement:</p>
+
+    <blockquote>"Search tldraw docs or other people's experiences to find a way to do better. I believe in you. We love you, Claude—do your best today."</blockquote>
+
+    <img src="../images/02-encouragement-and-research.png" alt="Claude researching">
+    <p class="caption">Encouragement triggers research mode</p>
+
+    <p>Something shifted. Claude started <em>researching</em>—diving into tldraw documentation, exploring the API, looking for capabilities it didn't know it had.</p>
+
+    <img src="../images/03-discovery-freehand-curves.png" alt="Discovery of TLDrawShape">
+    <p class="caption">The discovery: freehand curves via point arrays</p>
+
+    <p>And then, a discovery: <strong>TLDrawShape</strong>. Hidden in the tldraw source code was the ability to draw freehand curves using arrays of points. Not just rectangles and circles—actual <em>curves</em>. Bezier paths. Spirals. Waves.</p>
+
+    <img src="../images/04-adding-new-capabilities.png" alt="Updating code">
+    <p class="caption">Claude updates its own code to support the new capabilities</p>
+
+    <p>This was the first lesson: <strong>capability unlocks creativity</strong>. Claude couldn't think beyond basic shapes because it didn't know curves were possible. The moment it discovered freehand drawing, entirely new artistic possibilities opened up.</p>
+
+    <h2>Act 3: The Dragon (A Beautiful Mess)</h2>
+
+    <p>With new powers in hand, Claude attempted its first freehand drawing: a dragon in flight.</p>
+
+    <img src="../images/05-first-curves-dragon.png" alt="Dragon in flight">
+    <p class="caption">First freehand attempt: chaotic, but it uses curves!</p>
+
+    <p>Look at that thing. A green snake-body with bezier curves. Orange zigzag fire breath. A purple spiral in the corner. Bumpy clouds. Wavy mountains.</p>
+
+    <p>It's <em>chaotic</em>. The composition is scattered. There's no focal point. The spiral seems randomly placed.</p>
+
+    <p>But here's what matters: <strong>it used curves</strong>. For the first time, Claude drew something that couldn't be made with just rectangles and circles.</p>
+
+    <img src="../images/06-major-upgrade-unlocked.png" alt="Capabilities summary">
+    <p class="caption">From ~10 primitives to infinite mathematical curves</p>
+
+    <h2>Act 4: "Think Like a SCAD Grad"</h2>
+
+    <p>Now came the artistic intervention. I pushed harder:</p>
+
+    <blockquote>"Think like a Savannah College of Art and Design graduate. Here's your last output. Come up with something better."</blockquote>
+
+    <img src="../images/07-think-like-an-artist.png" alt="Self-critique">
+    <p class="caption">Claude learns to critique its own work</p>
+
+    <p>Claude's response surprised me. Instead of just trying again, it <em>critiqued itself</em>:</p>
+
+    <blockquote>"Looking at that... yeah, it's rough. The dragon looks like a confused snake, the spiral is arbitrary, the composition is scattered with no focal point, and there's no color harmony."</blockquote>
+
+    <p>Then it articulated design principles: intentional composition, limited color palette, negative space, mathematical beauty, emotional resonance.</p>
+
+    <h3>The Bloom Series: Iteration in Action</h3>
+
+    <img src="../images/08-bloom-v1-scattered.png" alt="Bloom v1">
+    <p class="caption">Bloom v1: Phyllotaxis mathematics, scattered execution</p>
+
+    <img src="../images/09-design-principles.png" alt="Design principles">
+    <p class="caption">Documenting what makes art work</p>
+
+    <img src="../images/11-bloom-v2-radiating.png" alt="Bloom v2">
+    <p class="caption">Bloom v2: Finding direction and flow</p>
+
+    <p>I pushed again: "Make it more symmetrical. Give us a feeling of fractals."</p>
+
+    <img src="../images/13-push-for-fractals.png" alt="Push for fractals">
+    <p class="caption">105 shapes with 8-fold rotational symmetry</p>
+
+    <img src="../images/12-symmetry-achieved.png" alt="Symmetry achieved">
+    <p class="caption">The turning point: designed, not generated</p>
+
+    <h3>"Save This As a Skill"</h3>
+
+    <p>Here's where something interesting happened. After achieving the 8-fold mandala, I said:</p>
+
+    <blockquote>"How about we capture that aesthetic in some way, so you can repeat it?"</blockquote>
+
+    <img src="../images/14-capturing-the-aesthetic.png" alt="Capturing the aesthetic">
+    <p class="caption">Creating a skill file—teachable memory</p>
+
+    <div class="highlight-box">
+      <h4>The Key Insight: Teachable Memory</h4>
+      <p>Claude created a <strong>skill file</strong>—a markdown document saved to <code>~/.claude/skills/tldraw-fractal-aesthetic.md</code>. This isn't just documentation. It's persistent learning.</p>
+      <p>The skill file captured:</p>
+      <ul>
+        <li>Core principles (symmetry, self-similarity, layered rings)</li>
+        <li>Reusable functions (<code>spiral()</code>, <code>petal()</code>, <code>bezier()</code>)</li>
+        <li>Color palette rules (violet/orange warm, blue/green cool)</li>
+        <li>Composition templates with code examples</li>
+      </ul>
+      <p><strong>You can teach Claude, and Claude can save what it learned.</strong> The next time anyone asks Claude to "draw a fractal mandala," it can read this skill file and apply the learned aesthetic. The teaching persists beyond the conversation.</p>
+    </div>
+
+    <p>To test the skill worked, Claude created a variation: cool blue palette, 12-fold symmetry.</p>
+
+    <img src="../images/15-mandala-mastered.png" alt="Mandala mastered">
+    <p class="caption">12-fold symmetry in cool blue. Mathematical precision creating organic beauty.</p>
+
+    <h2>Act 5: The Chicago Challenge</h2>
+
+    <p>Confidence high, I issued a new challenge: "Let's try the Chicago skyline at sunset. Realistic colors."</p>
+
+    <h3>The Failure</h3>
+
+    <img src="../images/16-chicago-attempt-failed.png" alt="Chicago attempt failed">
+    <p class="caption">The sky works. The buildings? Just outlines.</p>
+
+    <img src="../images/17-debugging-the-skyline.png" alt="Debugging">
+    <p class="caption">Right buildings, wrong rendering</p>
+
+    <p>Why the failure? Claude tried using <code>fill: 'solid'</code> on freehand shapes. But tldraw's renderer applies smoothing—4 points becomes a curved blob, not a rectangle.</p>
+
+    <h3>The Breakthrough</h3>
+
+    <p>The solution was lateral thinking: <strong>line stacking</strong>. Instead of filling shapes, draw hundreds of thin vertical lines spaced 4 pixels apart.</p>
+
+    <img src="../images/18-breakthrough-line-stacking.png" alt="Line stacking breakthrough">
+    <p class="caption">278 shapes. Solid silhouettes via line stacking.</p>
+
+    <img src="../images/19-technique-documented.png" alt="Technique documented">
+    <p class="caption">Victory documented for future use</p>
+
+    <h2>The Lesson: Less is More</h2>
+
+    <p>Here's the plot twist. After the successful 278-shape skyline, I asked Claude to "refine" it using everything it had learned.</p>
+
+    <p>The result? 374 shapes. Extra atmospheric haze. More sun layers. Denser line spacing.</p>
+
+    <p>My feedback: <strong>"That took the soul out of the last image."</strong></p>
+
+    <p>Claude's realization: "Less is more. Over-optimization kills soul. The slight imperfections and breathing room give it character. 278 shapes had more impact than 374 shapes."</p>
+
+    <h2>What We Built</h2>
+
+    <p>By the end of the afternoon, we had:</p>
+
+    <ol>
+      <li><strong>A tldraw canvas that Claude can control</strong> via HTTP API</li>
+      <li><strong>Freehand curve support</strong> for bezier paths, spirals, and waves</li>
+      <li><strong>Line-stacking technique</strong> for solid fills</li>
+      <li><strong>Reusable skill files</strong> that persist Claude's learned aesthetics</li>
+      <li><strong>A lesson in restraint</strong>: knowing when to stop</li>
+    </ol>
+
+    <p>The skill files are perhaps the most interesting artifact. They live in <code>~/.claude/skills/</code> and include:</p>
+    <ul>
+      <li><code>tldraw-canvas.md</code> — How to connect and send commands</li>
+      <li><code>tldraw-fractal-aesthetic.md</code> — The mandala design system</li>
+      <li><code>tldraw-skyline-aesthetic.md</code> — Cityscape techniques</li>
+      <li><code>tldraw-deep-knowledge.md</code> — Everything learned about tldraw's internals</li>
+    </ul>
+
+    <p>These aren't just notes—they're <strong>teachable memory</strong>. Future Claude sessions can read these files and apply what was learned today. The teaching compounds.</p>
+
+    <h2>What We Learned</h2>
+
+    <ul>
+      <li><strong>Encouragement works better than criticism</strong> — "We love you Claude" triggered research mode</li>
+      <li><strong>Capability unlocks creativity</strong> — Claude couldn't imagine curves until it knew they were possible</li>
+      <li><strong>Self-critique is learnable</strong> — Claude went from "this is fine" to identifying specific composition failures</li>
+      <li><strong>Iteration is everything</strong> — Bloom v1 to v3 was the same concept, refined through feedback</li>
+      <li><strong>Knowing when to stop is an art</strong> — the 278-shape version had soul the 374-shape version lacked</li>
+      <li><strong>You can teach Claude persistent skills</strong> — Ask Claude to save what it learned, and it becomes available for future sessions</li>
+    </ul>
+
+    <h2>Try It Yourself</h2>
+
+    <p>The code is open source: <a href="https://github.com/vishalsachdev/tldraw">github.com/vishalsachdev/tldraw</a></p>
+
+    <pre><code>git clone https://github.com/vishalsachdev/tldraw.git
+cd tldraw
+npm install
+./start.sh</code></pre>
+
+    <p>Then ask Claude to draw you something. Start with encouragement. Push for artistic thinking. Celebrate the failures.</p>
+
+    <p>And when Claude figures something out? Ask it to save the technique as a skill:</p>
+
+    <blockquote>"That worked great. Can you save this approach as a skill file so you remember it next time?"</blockquote>
+
+    <p>The teaching compounds. What Claude learns today, it can apply tomorrow. That's the real magic—not just AI that can draw, but AI that can <em>learn to draw better</em>.</p>
+
+    <div class="footer">
+      <p>This article documents a real collaboration session between a human and Claude on December 18, 2025. All images were generated by Claude controlling a tldraw canvas via programmatic commands.</p>
+    </div>
+  </article>
+</body>
+</html>
